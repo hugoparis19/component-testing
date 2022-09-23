@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "cy:open": "cypress open"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +19,17 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "@fronts/nyc-consents": "^22.250.16",
+    "@fronts/nyc-dynamic-components": "^22.200.4",
+    "@fronts/nyc-monitoring": "file:../../yuc/Yuc.Acquisition.Fronts/dist/libs/nyc-monitoring/fronts-nyc-monitoring-0.0.1.tgz",
+    "@fronts/nyc-navigation": "file:../../yuc/Yuc.Acquisition.Fronts/dist/libs/nyc-navigation/fronts-nyc-navigation-0.0.1.tgz",
+    "@fronts/nyc-testing": "file:../../yuc/Yuc.Acquisition.Fronts/dist/libs/nyc-testing",
+    "@fronts/nyc-translation": "file:../../yuc/Yuc.Acquisition.Fronts/dist/libs/nyc-translation",
+    "@ngrx/component-store": "^14.3.1",
+    "@ngrx/effects": "^14.3.1",
+    "@ngx-translate/core": "^14.0.0",
+    "ng-mocks": "^14.2.1",
+    "ngx-translate": "^0.0.1-security",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -27,12 +39,21 @@
     "@angular/cli": "~14.0.3",
     "@angular/compiler-cli": "^14.0.0",
     "@types/jasmine": "~4.0.0",
+    "@types/jest": "27.4.1",
+    "@types/sinon": "^10.0.12",
+    "cypress": "^10.7.0",
     "jasmine-core": "~4.1.0",
+    "jest": "27.5.1",
+    "jest-junit": "^13.0.0",
+    "jest-marbles": "^3.0.2",
+    "jest-preset-angular": "11.1.2",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "sinon": "^14.0.0",
+    "ts-jest": "27.1.4",
     "typescript": "~4.7.2"
   }
 }
