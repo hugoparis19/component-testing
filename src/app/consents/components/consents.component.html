@@ -1,8 +1,16 @@
 <div data-di-form-track data-di-form-id="contents-consents" class="h-100">
   <div class="d-flex flex-column justify-content-between h-100">
     <div>
-      <div class="heading--small mb-3" data-test="consents-title" data-cy="consents-title" [innerHtml]="'consents.consents.title' | translate"></div>
-      <div class="text--medium mb-4" [innerHtml]="'consents.consents.subtitle' | translate"></div>
+      <div
+        class="heading--small mb-3"
+        data-test="consents-title"
+        data-cy="consents-title"
+        [innerHtml]="'consents.consents.title'"
+      ></div>
+      <div
+        class="text--medium mb-4"
+        [innerHtml]="'consents.consents.subtitle'"
+      ></div>
 
       <ng-container *ngIf="initDone$ | async; else loader">
         <div data-test="consents" data-cy="consents">
@@ -15,7 +23,10 @@
             [params]="acceptAllParams"
             [value]="(acceptAllValue$ | async)!"
           >
-            <dyn-label class="label body--medium" [innerHTML]="'consents.select_all_contents' | translate"></dyn-label>
+            <dyn-label
+              class="label body--medium"
+              [innerHTML]="'consents.select_all_contents'"
+            ></dyn-label>
           </dyn-checkbox>
         </div>
         <ng-container *ngFor="let consent of consentsToDisplay">
@@ -28,22 +39,17 @@
             [params]="consent.params"
             [value]="(getConsentValue$(consent.consentId) | async)!"
           >
-            <dyn-label class="label body--medium mb-0" [innerHTML]="consent.text | translate"></dyn-label>
+            <dyn-label
+              class="label body--medium mb-0"
+              [innerHTML]="consent.text"
+            ></dyn-label>
           </dyn-checkbox>
         </ng-container>
       </ng-container>
-      <ng-template #loader> <div [innerHTML]="'consents.loading' | translate"></div> </ng-template>
+      <ng-template #loader>
+        <div [innerHTML]="'consents.loading'"></div>
+      </ng-template>
     </div>
-    <div class="text-center">
-      <nyc-navigation-buttons
-        (next)="onNext()"
-        (back)="onBack()"
-        [nextButtonLabel]="'consents.navigation-next' | translate"
-        [backButtonLabel]="'consents.navigation-back' | translate"
-        (centralButtonClick)="onCentralButtonClick()"
-        [centralButtonLabel]="'consents.navigation-back-to-shop' | translate"
-        [navigationType]="(navigationType$ | async) || 'both'"
-      ></nyc-navigation-buttons>
-    </div>
+    <div class="text-center"></div>
   </div>
 </div>
